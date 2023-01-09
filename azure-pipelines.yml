@@ -48,7 +48,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-20.04'
-    environment: 'spike.default'
+    environment: 'Kurbernetes.default'
     variables:
     - group: Release
     strategy:
@@ -63,13 +63,13 @@ stages:
              action: createSecret
              secretName: $(imagePullSecret)
              dockerRegistryEndpoint: 'Container Registry Connection'
-             kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+             kubernetesServiceConnection: 'Kurbernetes-tailspinspacegame-win002-default-1673232836333'
              namespace: 'default'
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
              action: deploy
-             kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+             kubernetesServiceConnection: 'Kurbernetes-tailspinspacegame-win002-default-1673232836333'
              namespace: 'default'
              manifests: |
                $(Pipeline.Workspace)/manifests/deployment.yml
