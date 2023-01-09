@@ -48,12 +48,12 @@ namespace TailSpin.SpaceGame.Web.Controllers
                 // Call the leaderboard service with the provided parameters.
                 LeaderboardResponse leaderboardResponse = await this._leaderboardServiceClient.GetLeaderboard(page, pageSize, mode, region);
 
-                vm.Page = leaderboardResponse.Page;
-                vm.PageSize = leaderboardResponse.PageSize;
-                vm.Scores = leaderboardResponse.Scores;
-                vm.SelectedMode = leaderboardResponse.SelectedMode;
-                vm.SelectedRegion = leaderboardResponse.SelectedRegion;
-                vm.TotalResults = leaderboardResponse.TotalResults;
+                vm.Page = leaderboardResponse.page;
+                vm.PageSize = leaderboardResponse.pageSize;
+                vm.Scores = leaderboardResponse.scores;
+                vm.SelectedMode = leaderboardResponse.selectedMode;
+                vm.SelectedRegion = leaderboardResponse.selectedRegion;
+                vm.TotalResults = leaderboardResponse.totalResults;
 
                 // Set previous and next hyperlinks.
                 if (page > 1)

@@ -33,7 +33,7 @@
         <a name="leaderboard"></a>
         <h2>Space leaders</h2>
 
-        @if (Model.ErrorMessage=="")
+        @if(string.IsNullOrEmpty(Model.ErrorMessage))
         {
             <!-- Start Leaderboard table -->
             <div class="row">
@@ -71,23 +71,23 @@
                                 </div>
                                 <div class="col-sm-4 score-data">
                                     <div style="text-align: left; margin-left: 100px;">
-                                        <partial name="Profile" model="new ProfileViewModel { Profile = score.Profile, Rank = (rank - 1).ToString() }" />
+                                        <partial name="Profile" model="new ProfileViewModel { Profile = score.profile, Rank = (rank - 1).ToString() }" />
                                         <a href="" data-toggle="modal" data-target="#profile-modal-@((rank - 1).ToString())">
-                                            <img class="avatar" src="@score.Profile.AvatarUrl" alt="@score.Profile.UserName">
+                                            <img class="avatar" src="@score.profile.AvatarUrl" alt="@score.profile.UserName">
                                             <div class="score-data username">
-                                                @score.Profile.UserName
+                                                @score.profile.UserName
                                             </div>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 score-data">
-                                    @score.Score.GameMode
+                                    @score.score.GameMode
                                 </div>
                                 <div class="col-sm-3 score-data">
-                                    @score.Score.GameRegion
+                                    @score.score.GameRegion
                                 </div>
                                 <div class="col-sm-2 score-data">
-                                    @score.Score.HighScore.ToString("N0")
+                                    @score.score.HighScore.ToString("N0")
                                 </div>
                             </div>
                         }
