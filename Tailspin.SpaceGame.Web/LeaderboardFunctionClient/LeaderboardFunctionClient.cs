@@ -18,6 +18,7 @@ namespace TailSpin.SpaceGame.Web
 
         async public Task<LeaderboardResponse> GetLeaderboard(int page, int pageSize, string mode, string region)
         {
+            Console.WriteLine($"{this._functionUrl}?page={page}&pageSize={pageSize}&mode={mode}&region={region}");
             using (WebClient webClient = new WebClient())
             {
                 string json = await webClient.DownloadStringTaskAsync($"{this._functionUrl}?page={page}&pageSize={pageSize}&mode={mode}&region={region}");
