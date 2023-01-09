@@ -46,7 +46,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
             try
             {
                 // Call the leaderboard service with the provided parameters.
-                /*LeaderboardResponse leaderboardResponse = await this._leaderboardServiceClient.GetLeaderboard(page, pageSize, mode, region);
+                LeaderboardResponse leaderboardResponse = await this._leaderboardServiceClient.GetLeaderboard(page, pageSize, mode, region);
 
                 vm.Page = leaderboardResponse.Page;
                 vm.PageSize = leaderboardResponse.PageSize;
@@ -63,7 +63,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
                 if (vm.TotalResults > page * pageSize)
                 {
                     vm.NextLink = $"/?page={page + 1}&pageSize={pageSize}&mode={mode}&region={region}#leaderboard";
-                }*/
+                }
             }
             catch(Exception e)
             {
